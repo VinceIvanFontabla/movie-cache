@@ -1,0 +1,106 @@
+.banner {
+  margin-bottom: 1rem;
+  z-index: 0;
+}
+
+.movie-poster {
+  position: absolute;
+  top: 0;
+  margin: auto;
+  display: block;
+  width: fit-content;
+  z-index: 0;
+}
+
+.banner-backdrop-image {
+  width: 100%;
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+}
+
+.banner-backdrop {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #2e2e2e;
+  background: linear-gradient(
+    0deg,
+    rgba(28, 28, 28, 1) 0%,
+    rgba(28, 28, 28, 0.5) 50%,
+    rgba(28, 28, 28, 0) 100%
+  );
+}
+
+.banner-info-wrapper {
+  position: relative;
+  margin: 10vh 5vw auto;
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+}
+
+.banner-movie-info p {
+  margin: 0;
+}
+
+.banner-movie-info .movie-genre {
+  margin-bottom: 1rem;
+}
+
+.banner-overview p {
+  margin-bottom: 1rem;
+}
+
+.banner-image {
+  display: none;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+@media (min-width: 43.75em) {
+  .banner-info-wrapper {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .banner-image {
+    justify-self: center;
+    display: block;
+    max-width: 12.5rem;
+  }
+
+  .banner-image img {
+    width: 100%;
+  }
+}
+
+@media (min-width: 62.5em) {
+  .banner-image {
+    max-width: 15.625rem;
+  }
+}
+
+@media (min-width: 80em) {
+  .movie-poster {
+    width: 100vw;
+  }
+  .banner-image {
+    max-width: 21.875rem;
+  }
+
+  .banner-info-wrapper {
+    margin-top: calc(10vh + 2rem);
+  }
+}
+
+@media (min-width: 80em) {
+  .banner-movie-info h2 {
+    font-size: 2rem;
+  }
+}

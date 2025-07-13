@@ -1,0 +1,140 @@
+.movie-card {
+  margin-bottom: 3rem;
+  height: auto;
+}
+
+.movie-card .fave-text {
+  display: none;
+}
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+}
+
+.movie-card-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  justify-content: center;
+  display: none;
+}
+
+.movie-card-overlay a {
+  align-self: center;
+}
+
+.movie-card-wrapper {
+  position: relative;
+  max-width: 11.5625rem;
+}
+
+.favorite-button {
+  background: #2e2e2e;
+  background: radial-gradient(
+    circle,
+    rgba(28, 28, 28, 1) 5%,
+    rgba(28, 28, 28, 0.5) 35%,
+    rgba(28, 28, 28, 0) 65%
+  );
+  border-radius: 50%;
+  position: absolute;
+  right: 0;
+  margin: 5%;
+}
+
+.favorite-button img {
+  width: 2.1875rem;
+}
+
+.rating {
+  position: absolute;
+  left: 0;
+  margin: 5%;
+  font-size: 0.75rem;
+  display: flex;
+  background-color: #1c1c1c;
+  height: 2.1875rem;
+  width: 2.1875rem;
+  border: 1px solid yellow;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-title {
+  margin: 1rem auto 0;
+}
+
+.card-date {
+  margin: 0 0 1rem;
+}
+.favorite-button {
+  cursor: pointer;
+}
+
+@media (min-width: 26.875em) {
+  .favorite-button img {
+    width: 3.125rem;
+  }
+  .rating {
+    height: 3.125rem;
+    width: 3.125rem;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 37.5em) {
+  .movie-card-wrapper {
+    max-width: 250px;
+  }
+}
+
+@media (min-width: 80em) {
+  .favorite-button {
+    cursor: pointer;
+  }
+  .movie-card-overlay {
+    display: flex;
+    background-color: #1c1c1c;
+    opacity: 0;
+    transition: opacity 0.25s ease-in-out;
+    pointer-events: none;
+    align-items: center;
+  }
+
+  .movie-card-wrapper:hover {
+    scale: 1.2;
+  }
+
+  .movie-card-wrapper:hover .movie-card-overlay {
+    pointer-events: auto;
+    background-color: rgba(28, 28, 28, 0.9);
+    opacity: 1;
+  }
+
+  .movie-card-wrapper:hover .card-title {
+    opacity: 0;
+  }
+
+  .movie-card-wrapper:hover .card-date {
+    opacity: 0;
+  }
+
+  .movie-card-wrapper:hover .card-more-info {
+    opacity: 0;
+  }
+
+  .rating,
+  .favorite-button {
+    z-index: 1;
+  }
+
+  .favorite-button:hover {
+    scale: 1.2;
+  }
+}

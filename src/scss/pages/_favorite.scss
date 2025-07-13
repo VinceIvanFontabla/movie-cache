@@ -1,0 +1,53 @@
+.favorite-page {
+  min-height: calc(90vh - 6.8rem);
+  margin: 10vh 5vw 1rem;
+  display: flex;
+
+  flex-direction: column;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+.favorite-page h1 {
+  z-index: 0;
+}
+
+.favorites-wrapper {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.favorites-wrapper .movie-card-wrapper {
+  width: 8.5rem;
+}
+
+.no-favorite {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.no-favorite a {
+  font-size: 1.5rem;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 26.875em) {
+  .favorites-wrapper .movie-card-wrapper {
+    width: 11.5625rem;
+  }
+}
+
+@media (min-width: 80em) {
+  .favorite-page {
+    margin-top: calc(10vh + 1rem);
+    min-height: calc(90vh - 7.8rem);
+  }
+}

@@ -1,0 +1,20 @@
+// Components
+@use './components/body';
+@use './components/header';
+@use './components/nav';
+@use './components/banner';
+@use './components/footer';
+@use './components/category';
+@use './components/movie-wrapper';
+@use './components/movie-card';
+
+
+// Pages
+@use './pages/home';
+@use './pages/individual-movie';
+@use './pages/favorite';
+@use './pages/about';
+@use './pages/contact';
+
+// Utilities
+@use './utilities/normalize';

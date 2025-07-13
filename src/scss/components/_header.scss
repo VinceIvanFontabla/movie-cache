@@ -1,0 +1,113 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  width: calc(100% - 10vw);
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5vw;
+  z-index: 1000;
+  background: linear-gradient(
+    0deg,
+    rgba(28, 28, 28, 0) 13%,
+    rgba(28, 28, 28, 0.51) 33%,
+    rgba(28, 28, 28, 0.67) 49%,
+    rgba(28, 28, 28, 0.82) 66%,
+    rgba(28, 28, 28, 0.91) 79%,
+    rgba(28, 28, 28, 1) 94%
+  );
+}
+
+.logo {
+  width: 50vw;
+  z-index: 1000;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.hamburger-menu {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: transparent;
+  color: #fff;
+  text-align: center;
+  z-index: 1000;
+  position: relative;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+.hamburger .line {
+  width: 50px;
+  height: 5px;
+  background-color: yellow;
+  display: block;
+  margin: 8px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+#hamburger-1.open .line:nth-child(2) {
+  opacity: 0;
+}
+
+#hamburger-1.open .line:nth-child(1) {
+  -webkit-transform: translateY(13px) rotate(45deg);
+  -ms-transform: translateY(13px) rotate(45deg);
+  -o-transform: translateY(13px) rotate(45deg);
+  transform: translateY(13px) rotate(45deg);
+}
+
+#hamburger-1.open .line:nth-child(3) {
+  -webkit-transform: translateY(-13px) rotate(-45deg);
+  -ms-transform: translateY(-13px) rotate(-45deg);
+  -o-transform: translateY(-13px) rotate(-45deg);
+  transform: translateY(-13px) rotate(-45deg);
+}
+
+.mobile-nav {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #1c1c1c;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 999;
+}
+
+@media (min-width: 26.875em) {
+  .logo {
+    max-width: 40vw;
+  }
+}
+
+@media (min-width: 43.75rem) {
+  .logo {
+    max-width: 30vw;
+  }
+}
+
+@media (min-width: 50rem) {
+  .logo {
+    max-width: 20vw;
+  }
+}

@@ -1,0 +1,44 @@
+.contact-us-content {
+  margin: 10vh 5vw auto;
+  min-height: calc(90vh - 6.8rem);
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+.contact-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.contact-list svg {
+  fill: white;
+}
+
+.contact-list svg path {
+  fill: white;
+}
+
+.contact-list svg:hover {
+  fill: yellow;
+  scale: 1.2;
+}
+
+.contact-list svg:hover path {
+  fill: yellow;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 80em) {
+  .contact-us-content {
+    margin-top: calc(10vh + 1rem);
+    min-height: calc(90vh - 7.8rem);
+  }
+}

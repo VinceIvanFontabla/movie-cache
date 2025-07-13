@@ -1,0 +1,67 @@
+.nav {
+  display: none;
+}
+
+.mobile-nav ul {
+  margin-top: 10vh;
+  padding: 0;
+}
+
+.mobile-nav ul li {
+  list-style-type: none;
+  padding: 2rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.fade-line {
+  display: block;
+  height: 2px;
+  background: linear-gradient(to right, transparent, yellow, transparent);
+  width: 100%;
+}
+
+li a {
+  text-decoration: none;
+  text-align: center;
+}
+
+.mobile-nav.open {
+  transform: translateX(0);
+}
+
+.main-nav {
+  display: none;
+}
+
+.mobile-nav li a.active {
+  color: yellow;
+}
+
+@media (min-width: 50em) {
+  .main-nav-mobile {
+    display: none;
+  }
+  .nav {
+    display: flex;
+  }
+
+  .nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    font-size: 1.5rem;
+  }
+  .fade-line-bscreen {
+    display: block;
+    height: 2px;
+    background: linear-gradient(to right, transparent, yellow, transparent);
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  .nav-li:hover .fade-line-bscreen {
+    opacity: 1;
+  }
+}

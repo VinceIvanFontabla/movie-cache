@@ -1,0 +1,270 @@
+.individual-background-poster {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+}
+
+.individual-banner-backdrop-image {
+  width: 100%;
+}
+.single-banner-poster {
+  margin: 10vh 5vw auto;
+}
+
+.individual-banner-backdrop {
+  position: absolute;
+
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    0deg,
+    rgba(28, 28, 28, 1) 0%,
+    rgba(28, 28, 28, 0.5) 50%,
+    rgba(28, 28, 28, 0) 100%
+  );
+}
+
+.individual-banner-overlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1c1c1c;
+  opacity: 0.6;
+}
+
+.movie-detail {
+  position: relative;
+  z-index: 1;
+}
+
+.individual-movie-poster {
+  display: none;
+}
+
+.detail-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: start;
+  align-items: center;
+  width: 90vw;
+  margin: 1rem auto;
+}
+
+.movie-detail p {
+  margin: auto 5vw;
+}
+
+.trailer-link {
+  text-align: center;
+  text-decoration: none;
+  background-color: #1c1c1c;
+  border: yellow 1px solid;
+  padding: 0.625rem;
+  border-radius: 1.25rem;
+}
+
+.trailer-link:hover {
+  background-color: yellow;
+  border: #2e2e2e 1px solid;
+  color: black;
+  scale: unset;
+}
+
+.movie-detail .add-to-favorite button {
+  position: relative;
+}
+
+.individual-rating {
+  font-size: 0.75rem;
+  display: flex;
+  background-color: #1c1c1c;
+  height: 2.1875rem;
+  width: 2.1875rem;
+  border: 1px solid yellow;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+.date-genre p {
+  margin: 0;
+}
+
+.add-to-favorite {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto 5vw;
+}
+
+.credits {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 5vw;
+  gap: 1rem;
+}
+.credits div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.credits p {
+  margin: 0;
+}
+
+.director-writer {
+  font-weight: bold;
+}
+
+.credits a:hover {
+  scale: unset;
+}
+
+.cast {
+  max-width: 100%;
+  margin: auto 5vw;
+}
+
+.cast-detail {
+  display: flex;
+  gap: 1rem;
+  justify-items: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.cast-card {
+  display: flex;
+  width: 8.5rem;
+  flex-direction: column;
+}
+
+.cast-image img {
+  width: 100%;
+}
+
+.cast-card p {
+  margin: auto;
+}
+.cast-card a {
+  text-align: center;
+  scale: unset;
+}
+
+.cast-section {
+  text-align: center;
+}
+
+.cast-card .cast-name {
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.cast-card .character {
+  margin-bottom: 1rem;
+}
+
+.view-more-wrapper {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.view-more {
+  background-color: transparent;
+  border: none;
+  color: white;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.add-to-favorite .favorite-button {
+  display: flex;
+  margin: 1rem auto;
+  align-items: center;
+  color: white;
+  gap: 1rem;
+}
+
+.add-to-favorite .favorite-button .fave-text {
+  margin: 0;
+}
+
+@media (min-width: 26.875em) {
+  .cast-card {
+    width: 11.5625rem;
+  }
+}
+
+@media (min-width: 56.25em) {
+  .individual-movie-poster img {
+    width: 100%;
+  }
+  .detail-wrapper {
+    margin: 1rem 5vw;
+  }
+
+  .single-banner-poster {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+
+  .individual-rating {
+    height: 3.125rem;
+    width: 3.125rem;
+  }
+  .individual-movie-poster {
+    display: block;
+    width: 15rem;
+    justify-self: center;
+  }
+
+  .individual-movie-poster img {
+    width: 100%;
+  }
+
+  .view-more-bscreen {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+  }
+  .cast-detail {
+    max-width: 100%;
+    display: flex;
+    width: auto;
+    gap: 1.25rem;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .cast-card {
+    min-width: 9.375rem;
+    height: fit-content;
+  }
+}
+
+@media (min-width: 80em) {
+  .individual-background-poster {
+    width: 100%;
+  }
+
+  .individual-movie-poster {
+    width: 18.75rem;
+  }
+
+  .single-banner-poster {
+    margin: calc(10vh + 1rem) 5vw auto;
+  }
+}
+
+@media (min-width: 120em) {
+  .individual-movie-poster {
+    width: 21.875rem;
+  }
+}
