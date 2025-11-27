@@ -51,7 +51,23 @@ function IndividualMovie() {
     getMovieId(id).then((data) => {
       setMovieData(data);
       setGenre(data.genres);
-      document.title = `${appTitle} - ${data.title}`;
+      document.title = `${data.title} - ${appTitle}`;
+      let metaDesc = document.querySelector('meta[name="description"]');
+    if (!metaDesc) {
+      metaDesc = document.createElement('meta');
+      metaDesc.name = "description";
+      document.head.appendChild(metaDesc);
+    }
+    metaDesc.content =
+     data.overview;
+
+    let linkCanonical = document.querySelector('link[rel="canonical"]');
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link');
+      linkCanonical.rel = "canonical";
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.href = `https://movie-cache.vincefontabla.com/movie/${data.id}`;
     });
     getMovieTrailer(id).then((data) => {
       setMovieTrailer(data);

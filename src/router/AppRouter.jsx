@@ -10,8 +10,13 @@ import Contact from "../pages/Contact";
 import { APP_FOLDER_NAME } from "../utils/global";
 
 function AppRouter() {
+
+  const isSubdomain = window.location.hostname !== "www.vincefontabla.com/movie-cache" &&
+                      window.location.hostname !== "vincefontabla.com/movie-cache";
+  const basename = isSubdomain ? "/" : `/${APP_FOLDER_NAME}`;
+
   return (
-    <BrowserRouter basename={`/${APP_FOLDER_NAME}`}>
+     <BrowserRouter basename={basename}>
       <GlobalProvider>
         <Header />
         <Routes>

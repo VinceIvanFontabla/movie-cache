@@ -2,9 +2,29 @@ import { appTitle } from "../utils/global";
 import { useEffect } from "react";
 
 function Contact() {
+  // Meta
   useEffect(() => {
-    document.title = `${appTitle} - Contact Us`;
-  }, []);
+  if (appTitle) {
+    document.title = `Contact Us - ${appTitle}`;
+
+    let metaDesc = document.querySelector('meta[name="description"]');
+    if (!metaDesc) {
+      metaDesc = document.createElement('meta');
+      metaDesc.name = "description";
+      document.head.appendChild(metaDesc);
+    }
+    metaDesc.content =
+     "Contact Movie Cache to share your thoughts feedback or suggestions and connect with us about movies and TV shows you love.";
+
+    let linkCanonical = document.querySelector('link[rel="canonical"]');
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link');
+      linkCanonical.rel = "canonical";
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.href = `https://movie-cache.vincefontabla.com/contact-us`;
+  }
+}, []);
 
   return (
     <main>

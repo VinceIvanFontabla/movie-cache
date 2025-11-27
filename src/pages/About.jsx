@@ -6,9 +6,29 @@ import popcorn from "../assets/popcorn.jpg";
 import { appTitle } from "../utils/global";
 
 function About() {
+  // Meta
   useEffect(() => {
-    document.title = `${appTitle} - About`;
-  }, []);
+  if (appTitle) {
+    document.title = `About - ${appTitle}`;
+
+    let metaDesc = document.querySelector('meta[name="description"]');
+    if (!metaDesc) {
+      metaDesc = document.createElement('meta');
+      metaDesc.name = "description";
+      document.head.appendChild(metaDesc);
+    }
+    metaDesc.content =
+      "Discover the world of movies with Movie Cache. Explore blockbusters hidden gems classics and build your personal must watch list.";
+
+    let linkCanonical = document.querySelector('link[rel="canonical"]');
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link');
+      linkCanonical.rel = "canonical";
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.href = `https://movie-cache.vincefontabla.com/about`;
+  }
+}, []);
 
   return (
     <main className="about-page">

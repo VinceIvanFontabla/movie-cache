@@ -16,10 +16,6 @@ function Home() {
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
-    document.title = `${appTitle}`;
-  }, []);
-
-  useEffect(() => {
     const handleScroll = () => {
       setVisible(window.scrollY > 0);
     };
@@ -81,6 +77,31 @@ function Home() {
     setSearchQuery(event.target.value);
     setCurrentPage(1);
   }
+
+
+// Meta
+useEffect(() => {
+  if (appTitle) {
+    document.title = appTitle;
+
+    let metaDesc = document.querySelector('meta[name="description"]');
+    if (!metaDesc) {
+      metaDesc = document.createElement('meta');
+      metaDesc.name = "description";
+      document.head.appendChild(metaDesc);
+    }
+    metaDesc.content =
+      "Movie Cache – Discover the latest movies and TV shows with ratings, trailers, and details powered by the TMDB API. Explore popular and trending titles today.";
+
+    let linkCanonical = document.querySelector('link[rel="canonical"]');
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link');
+      linkCanonical.rel = "canonical";
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.href = `https://movie-cache.vincefontabla.com/`;
+  }
+}, []);
 
   return (
     <main id="home" className="home">

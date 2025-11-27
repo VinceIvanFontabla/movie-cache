@@ -37,6 +37,30 @@ function Favorite() {
     return () => document.body.classList.remove("no-favorites");
   }, [favorites]);
 
+  // Meta
+  useEffect(() => {
+  if (appTitle) {
+    document.title = `Favorites - ${appTitle}`;
+
+    let metaDesc = document.querySelector('meta[name="description"]');
+    if (!metaDesc) {
+      metaDesc = document.createElement('meta');
+      metaDesc.name = "description";
+      document.head.appendChild(metaDesc);
+    }
+    metaDesc.content =
+      "Explore and manage your saved movies and TV shows on Movie Cache. Quickly access your favorites anytime.";
+
+    let linkCanonical = document.querySelector('link[rel="canonical"]');
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link');
+      linkCanonical.rel = "canonical";
+      document.head.appendChild(linkCanonical);
+    }
+    linkCanonical.href = `https://movie-cache.vincefontabla.com/favorites`;
+  }
+}, []);
+
   return (
     <main>
       <div className="favorite-page">
